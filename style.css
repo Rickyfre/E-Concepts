@@ -101,7 +101,6 @@ nav span {
 }
 
 nav ul li {
-    display: inline-block;
     margin: 0.6rem 1.25rem;
     list-style: none;
 }
@@ -224,7 +223,8 @@ header {
     font-weight: 500;
     cursor: pointer;
     border: 0.05rem solid #ff004f;
-    border-radius: 1.3rem;
+    border-radius: 1.5rem;
+    align-items: left;
 }
 
 
@@ -241,8 +241,7 @@ header {
 
 .tab__contents ul li {
     margin: 0.6rem 0;
-    list-style: outside;
-    list-style-type: circle;
+    list-style: circle;
 }
 
 
@@ -252,6 +251,7 @@ header {
     overflow: hidden;
     transition: var(--transition);
 }
+
 
 .tab__contents.active__tab {
     max-height: 500px;
@@ -339,7 +339,7 @@ header {
     width: 100%;
     border-radius: 10px;
     display: block;
-    transition: tansform 0.5s;
+    transition: transform 0.5s;
 }
 
 .layer { 
@@ -472,9 +472,9 @@ form input, form textarea {
     border-radius: 6px;
 }
 
-form btn2{
-    padding: 0.8rem 3.8rem;
-    font-size: 1.5rem;
+form .btn2 {
+    padding: 0.7rem 2.8rem;
+    font-size: 1.2rem;
     margin-top: 0.5rem;
     cursor: pointer;
     display: inline-block;
@@ -494,80 +494,69 @@ form btn2{
     color: #ff004f;
 }
 
-/*----------css for small screen--------*/
-nav {
-    display: none;
+.nav__menu.active {
+    display: flex;
 }
 
+
+/*--=============CSS FOR SMALL SCREEN===============--*/
+
 @media only screen and (max-width: 600px) {
-    .header{
-        background-image: url(images/);
+    .container {
+        width: var(--container-width-sm);
     }
 
-    .header-text{
-        margin-top: 100%;
-        font-size: 16px;
+    .nav__menu {
+        display: none;
     }
 
-    .header-text h1{
-        font-size: 30px;
-    }
-
-    nav .fas{
+    .nav__menu.active {
         display: block;
-        font-size: 25px;
-    }
-
-    nav ul {
-        background: #ff004f;
-        position: fixed;
-        top: 0;
-        right: -200px;
-        width: 200px;
-        height: 100vh;
-        padding-top: 50px;
-        z-index: 2;
-        transition: right 0.5s;
-    }
-
-    nav ul li{
-        display: block;
-        margin: 25px;
-    }
-
-    nav ul .fas{
         position: absolute;
-        top: 25px;
-        left: 25px;
-        cursor: pointer;
+        top: 33.5rem;
+        left: 0;
+        width: 100%;
+        background: #262626;
+        padding: 1rem;
     }
 
-    .sub-title{
-        font-size: 40px;
+    nav button {
+        display: block;
     }
 
-    .about-col-1, a, .about-col-2{
+    .header__container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .header__left-image img {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .tab__titles {
+        flex-direction: column;
+    }
+
+    .tab__links {
+        margin-right: 0;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+    }
+
+    .services__list {
+        grid-template-columns: 1fr;
+    }
+
+    .work__list {
+        grid-template-columns: 1fr;
+    }
+
+    .row {
+        grid-template-columns: 1fr;
+    }
+
+    .contact__left, .contact__right {
         flex-basis: 100%;
-    }
-
-    .about-col-1{
-        margin-bottom: 30px;
-    }
-
-    .about-col-2{
-        font-size: 14px;
-    }
-
-    .tab-links{
-        font-size: 16px;
-        margin-right: 20px;
-    }
-
-    .contact-left, .contact-right{
-        flex-basis: 100%;
-    }
-
-    .copyright{
-        font-size: 14px;
     }
 }
